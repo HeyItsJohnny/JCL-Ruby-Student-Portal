@@ -1,0 +1,28 @@
+<table class="table">
+    <h1>Jonathan Laroco's Comments List</h1>
+    <p class="lead">Here is a comment's list. Users can add, delete, and edit comments.</p>
+    <p></p>
+    <a href="/comments/new"><button class="btn btn-lg btn-primary btn-block" type="submit">Add New Comment</button></a>
+    <thead>
+    <tr>
+        <th>Subject</th>
+        <th>Content</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+        <% @comments.each do |comment| %>
+            <tr>
+                <td><%= comment.subject %></td>
+                <td><%= comment.content %></td>
+                <td><%= link_to 'Show', comment, class: 'btn btn-info' %></td>
+                <td><%= link_to 'Edit', edit_comment_path(comment), class: 'btn btn-warning' %></td>
+                <td><%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table> 
+        
+

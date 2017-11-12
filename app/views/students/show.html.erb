@@ -1,0 +1,63 @@
+
+<h2>Student Record: <%= @student.firstname %> <%= @student.lastname %></h2>
+<div class="field form-group"> 
+  <strong>Firstname:</strong>
+  <%= @student.firstname %>
+</div>
+
+<div class="field form-group"> 
+  <strong>Lastname:</strong>
+  <%= @student.lastname %>
+</div>
+
+<div class="field form-group"> 
+  <strong>Birthday:</strong>
+  <%= @student.birthday %>
+</div>
+
+<div class="field form-group"> 
+  <strong>Address:</strong>
+  <%= @student.address %>
+</div>
+
+<div class="field form-group"> 
+  <strong>Student ID:</strong>
+  <%= @student.studentid %>
+</div>
+
+<div class="field form-group"> 
+  <strong>Created On:</strong>
+  <%= @student.created_at %>
+</div>
+
+<div class="field form-group"> 
+  <strong>Updated On:</strong>
+  <%= @student.updated_at %>
+</div>
+<br>
+<h3>Number of comments: <%= @student.comments.count %> </h3>
+<br>
+<br>
+<table class="table">
+    <h3>Comments for <%= @student.firstname %> <%= @student.lastname %> </h3>
+    <br>
+    <tbody>
+        <% @student.comments.each do |comment| %>
+            <tr>
+                <td><%= comment.subject %></td>
+                <td><%= comment.content %></td>
+                <td><%= link_to 'Show', comment, class: 'btn btn-info' %></td>
+                <td><%= link_to 'Edit', edit_comment_path(comment), class: 'btn btn-warning' %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table> 
+        
+
+<h3>Add a comment</h3>
+
+<%= render 'comments/studentform' %>
+<br>
+<%= link_to 'Edit', edit_student_path(@student), class: 'btn btn-warning btn-block' %>
+<br>
+<a class="btn btn-info btn-block" href="/home">Home Page</a>

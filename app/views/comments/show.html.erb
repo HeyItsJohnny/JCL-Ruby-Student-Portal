@@ -1,0 +1,26 @@
+
+<h2>Comment Record: </h2>
+<div class="field form-group"> 
+  <strong>Subject:</strong>
+  <%= @comment.subject %>
+</div>
+
+<div class="field form-group"> 
+  <strong>Content:</strong>
+  <%= @comment.content %>
+</div>
+
+<div class="field form-group"> 
+  <strong>Created On:</strong>
+  <%= @comment.created_at %>
+</div>
+
+<div class="field form-group"> 
+  <strong>Updated On:</strong>
+  <%= @comment.updated_at %>
+</div>
+
+<%= link_to 'Edit', edit_comment_path(@comment), class: 'btn btn-warning btn-block' %>
+<p></p>
+<a class="btn btn-info btn-block" href="/home">Home Page</a>
+

@@ -1,0 +1,13 @@
+<%= form_for(:welcome, url: login_path) do |f|%>
+  <div class="field form-group">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, class: 'form-control', :required => true %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :password %><br>
+    <%= f.password_field :password, class: 'form-control', :required => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Login', class: 'btn btn-success btn-block' %>
+  </div>
+<% end %>
